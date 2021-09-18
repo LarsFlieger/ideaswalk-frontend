@@ -1,4 +1,6 @@
-export function IdeaExcerpt(props) {
+import { Idea } from "../../types/idea"
+
+export function IdeaExcerpt(props: Idea) {
 
     return <div className="mb-16">
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{props.title}</h2>
@@ -13,7 +15,7 @@ export function IdeaExcerpt(props) {
     </div>
 }
 
-export function IdeaExcerptSkeleton(props) {
+export function IdeaExcerptSkeleton() {
     return <div className="animate-pulse mb-16 flex-1 space-y-4 py-1">
         <div className="h-10 bg-gray-400 rounded w-3/6"></div>
         <div className="space-y-2">
