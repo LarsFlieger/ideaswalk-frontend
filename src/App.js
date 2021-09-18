@@ -6,11 +6,14 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [ideas, setIdeas] = useState([])
 
-  useEffect(async () => {
-    const data = await fetch('http://localhost:3000/idea')
-    const ideas = await data.json()
-    setIdeas(ideas)
-    setLoading(false)
+  useEffect(() => {
+    const fetchIdeas = async () => {
+      const data = await fetch('http://localhost:3000/idea')
+      const ideas = await data.json()
+      setIdeas(ideas)
+      setLoading(false)
+    }
+    fetchIdeas()
   }, [])
 
   return (<div className="container mx-auto">
